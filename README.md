@@ -25,7 +25,7 @@ pip3 install -r requirements.txt
 ```
 
 ```bash
-python3 -m unittest discover -s selenium_test  -p '*.py'
+python3 -m unittest discover -p '*.py'
 ```
 
 
