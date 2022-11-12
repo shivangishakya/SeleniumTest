@@ -46,9 +46,13 @@ class CartPageTest(unittest.TestCase):
 
     def test_get_filled_cart(self):
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/footer/div/a[1]')
+        time.sleep(2)
         elem.click()
+        time.sleep(2)
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/a[1]')
+        time.sleep(2)
         elem.click()
+        time.sleep(2)
         self.assertIn(self.driver.current_url, "http://localhost:3000/launch/109")
 
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/div[3]/button')
@@ -87,9 +91,7 @@ class CartPageTest(unittest.TestCase):
         self.assertIn(button.text, "BOOK ALL")
         time.sleep(5)
         button.click()
-
-        elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/footer/div/a[1]')
-        self.assertIn(elem.text, "HOME")
+        time.sleep(2)
 
         self.driver.get("http://localhost:3000/launch/109")
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/div[3]/button')

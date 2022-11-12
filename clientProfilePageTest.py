@@ -46,9 +46,13 @@ class ProfilePageTest(unittest.TestCase):
 
     def test_get_some_trip(self):
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/footer/div/a[1]')
+        time.sleep(2)
         elem.click()
+        time.sleep(2)
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/a[1]')
+        time.sleep(2)
         elem.click()
+        time.sleep(2)
         self.assertIn(self.driver.current_url, "http://localhost:3000/launch/109")
 
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/div[3]/button')
@@ -87,8 +91,10 @@ class ProfilePageTest(unittest.TestCase):
         self.assertIn(button.text, "BOOK ALL")
         time.sleep(5)
         button.click()
+        time.sleep(2)
 
         self.driver.get("http://localhost:3000/profile")
+
         elem = self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/div[2]/a')
         time.sleep(5)
         self.assertIn(elem.text, "Starlink-15 (v1.0)\nFALCON 9") 
