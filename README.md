@@ -12,7 +12,9 @@ cd fullstack-tutorial/final/client && npm i && npm start
 ```
 # Selenium Test Run
 
+```bash
 python3 -m unittest discover -s selenium_test  -p '*.py'
+```
 
 
 # Test Cases Summary:
